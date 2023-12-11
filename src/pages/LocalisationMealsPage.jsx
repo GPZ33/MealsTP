@@ -10,7 +10,9 @@ const LocalisationMealsPage = () => {
     useEffect(() => {
         (async () => {
             const localisationReponse = await fetch("https://www.themealdb.com/api/json/v1/1/list.php?a=list");
-            setLocalisation(await localisationReponse.json());
+            const localisationReponseData = (await localisationReponse.json());
+
+            setLocalisation(localisationReponseData.meals);
         })();
     },[])
 
@@ -22,7 +24,7 @@ const LocalisationMealsPage = () => {
             <div>
                 {localisation ? (
                     <>
-                        {localisation.meals.map((localisation) => {
+                        {localisation.map((localisation) => {
                             return (
                                 <h3>
                                     {localisation.strArea}

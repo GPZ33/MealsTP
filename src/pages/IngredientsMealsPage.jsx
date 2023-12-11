@@ -10,7 +10,9 @@ const IngredientMealsPage = () => {
     useEffect(() => {
         (async () => {
             const ingredientReponse = await fetch("https://www.themealdb.com/api/json/v1/1/list.php?i=list");
-            setIngredient(await ingredientReponse.json());
+            const ingredientReponseData = await ingredientReponse.json();
+
+            setIngredient(ingredientReponseData);
         })();
     }, [])
 

@@ -9,10 +9,12 @@ const CategoryMealsPage = () => {
     const [category, setCategory] = useState(null);
     useEffect(() => {
         (async () => {
-            const categoryReponse = await fetch("https://www.themealdb.com/api/json/v1/1/list.php?c=list");
-            setCategory(await categoryReponse.json());
+            const categoriesResponse = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
+            const categoriesResponseData = await categoriesResponse.json();
+
+            setCategory(categoriesResponseData.categories);
         })();
-    },[])
+    },[]);
 
     console.log(category);
 
@@ -22,7 +24,7 @@ const CategoryMealsPage = () => {
             <div>
                 {category ? (
                     <>
-                        {category.meals.map((category) => {
+                        {category.map((category) => {
                             return (
                                 <h3>
                                     {category.strCategory}

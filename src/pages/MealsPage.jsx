@@ -11,9 +11,11 @@ function Home() {
     useEffect(() => {
         (async () => {
             const mealsReponse = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=");
-            setMeals(await mealsReponse.json());
+            const mealsReponseData = await mealsReponse.json();
+
+            setMeals(mealsReponseData);
         })();
-    },[])
+    },[]);
     console.log(meals);
     return (
         <>

@@ -6,6 +6,7 @@ import MealsPage from "./pages/MealsPage";
 import CategoryMealsPage from "./pages/CategoryMealsPage";
 import LocalisationMealsPage from "./pages/LocalisationMealsPage";
 import IngredientMealsPage from "./pages/IngredientsMealsPage";
+import MealDetailsPage from "./pages/MealDetailsPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/category" element={<CategoryMealsPage />} />
         <Route path="/localisation" element={<LocalisationMealsPage />} />
         <Route path="/ingredient" element={<IngredientMealsPage />} />
+        <Route path="/details/:id" element={<MealDetailsPage />} />
       </Routes>
     </BrowserRouter>
     </>
