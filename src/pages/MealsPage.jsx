@@ -25,7 +25,9 @@ function Home() {
                     <>
                         {meals.meals.map((meal) => {
                             return (
+                                <>
                                 <MealCard meal={meal} />
+                                </>
                             );
                         })}
                     </>

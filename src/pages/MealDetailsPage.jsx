@@ -19,6 +19,8 @@ const MealDetailsPage = () => {
             {meal ? (
                 <article>
                     <h2>{meal.strMeal}</h2>
+                    <p>{meal.strInstructions}</p>
+                    <iframe width="560" height="315" src={meal.strYoutube.replace("/watch?v=", "/embed/")} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </article>
             ) : (
                 <p>En cours de chargement</p>
